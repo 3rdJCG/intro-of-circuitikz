@@ -1,0 +1,27 @@
+%!TEX encoding = UTF-8
+% +++
+% latex = "uplatex"
+% +++
+
+% --build requirements-------------------
+% |	command	: uplatex					|
+% |	Fonts	: NotoSansCJKjp				|
+% |			  NotoSerifCJKjp			|
+% ---------------------------------------
+\input{settings.tex}
+
+% for file division
+\newcommand{\ifdraft}{false}
+\graphicspath{
+	{./contents/installation/figure/}
+}
+
+\begin{document}
+
+\tableofcontents
+\clearpage
+
+% input introduction file
+\input{contents/introduction/introduction.tex}
+
+\end{document}
