@@ -3,10 +3,45 @@
 	\begin{document}
 \fi
 
-\chapter{\LaTeX 使用環境の構築}
-	CircuiTikZは\LaTeX の拡張機能ですので、\LaTeX の使用環境を整える必要があります。
-	
-	
+\chapter{\logoLaTeX 使用環境の構築}
+	\logoCiTikZ は\LaTeX の拡張機能ですので、\LaTeX の使用環境を整える必要があります。
+	本書の目的は\logoCiTikZ を使用することでありますので、
+	本格的な環境構築は行わず、OverleafというWeb上で\LaTeX を使用することができるサービスを使用します。
+
+	\section{Overleafの設定}
+		まず、Overleafをブラウザで開きます。URLは以下の通りです。
+		\begin{mdframed}[style=shadow]
+			\url{https://www.overleaf.com}
+		\end{mdframed}
+		すると以下のようなページが開きます。
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=\textwidth]{figure/overleaf-page-top.png}
+		\end{figure}
+		右上のRegisterをクリックし、会員登録を行います。
+
+		\newpage
+		\begin{wrapfigure}{r}[0pt]{0.6\textwidth}
+			\centering
+
+			\includegraphics[width=0.6\textwidth]{figure/overleaf-page-createproject.png}
+
+			\vspace{3mm}
+
+			\begin{flushright}
+				\includegraphics[width=0.55\textwidth]{figure/overleaf-page-projectname.png}
+			\end{flushright}
+		\end{wrapfigure}
+		会員登録が完了すると以下のようなページが開くので、
+		"Cleate First Project"をクリックし、"Blank Project"を選択します。
+		
+		New Projectというポップアップが出てくるので、ここにProject名を入力します。
+		どんな名前でも問題なく動作しますが、今回は解説のために
+		\begin{mdframed}[style=shadow]
+			\url{circuitikz-template}
+		\end{mdframed}\vspace{-3mm}
+		と入力してください。
+		
 
 \expandafter\ifx\csname ifdraft\endcsname\relax
 	\end{document}
