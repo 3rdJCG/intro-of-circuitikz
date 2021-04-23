@@ -14,10 +14,41 @@
 
 	\LaTeX には多くの拡張機能があり、化学記号を美しく出力するための機能、
 	音楽記号を美しく出力するための機能など様々な機能が存在します。
-	本書では、回路図を美しく出力するための拡張機能であるCircuiTikZを取り扱います。
+	本書では、回路図を美しく出力するための拡張機能であるCircui{\TikZ}\footnote{サーキッティクスと読む}を取り扱います。
 
-	教科書などの書籍でみられるような美しい回路図は、一般的なソフトウェアで作成するのは難しいです。
-	しかし、CircuiTikZを用いれば、そのような回路図をあなたの手で作成することができます。
+	\begin{figure}[H]
+		\centering
+		\begin{tabular}{c}
+			\begin{minipage}{0.45\hsize}
+				\centering
+				\includegraphics[width=4cm]{figure/circuit.pdf}
+				\caption{KiCadで生成した回路図}
+				\label{fig:kicad-circuit}
+			\end{minipage}
+
+			\begin{minipage}{0.45\hsize}
+				\centering
+				\begin{circuitikz}[scale=1.5]
+					\draw (0,0)
+					to[sV,l=$FG$] (0,2);
+					\draw (0,2)
+					to[short] (2,2);
+					\draw (2,2)
+					to[R,l_=$R$] (2,1);
+					\draw (2,1)
+					to[L,l_=$L$] (2,0);
+					\draw (2,0)
+					to[short] (0,0);
+				\end{circuitikz}
+				\caption{Circui{\TikZ}で生成した回路図}
+				\label{fig:circuitikz-circuit}
+			\end{minipage}
+		\end{tabular}
+	\end{figure}
+
+	図\ref{fig:kicad-circuit}は、一般的な回路図エディタであるKiCadを用いて作成した回路図、
+	図\ref{fig:circuitikz-circuit}は、Circui{\TikZ}で作成した回路図です。
+	Circui{\TikZ}を用いれば、このように教科書などの書籍でみられるような美しい回路図をあなたの手で作成することができます。
 
 	本書がきっかけで\LaTeX に興味を持っていただければと思います。
 

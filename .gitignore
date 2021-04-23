@@ -275,5 +275,8 @@ TSWLatexianTemp*
 # draft pdfs
 /contents/**/*.pdf
 
+# arrow pdf files in figure directory
+!/contents/**/figure/*.pdf
+
 # Lua scripts
 *.lua
