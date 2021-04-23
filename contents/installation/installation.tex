@@ -63,18 +63,108 @@
 			\end{flushright}
 		\end{minipage}
 
-		
+		\noindent
+		\begin{minipage}{0.4\hsize}
+			すると左のファイル欄に\url{.latexmkrc}が追加されています。
+			このファイルをクリックし、編集画面を開きます。
+			編集画面を開くと、右図のように真っ白なファイルが表示されます。
+			このファイルに、以下に示す設定コードを入力してください。
+		\end{minipage}\hfill
+		\begin{minipage}{0.6\hsize}
+			\begin{flushright}
+				\includegraphics[width=0.95\textwidth]{overleaf-editer-latexmkrc.png}
+			\end{flushright}
+		\end{minipage}
 
-% 		\newpage
-% 		\begin{minted}{perl}
-% #!/usr/bin/env perl
-% $pdf_mode         = 3;
-% $latex            = 'uplatex -kanji=utf8 -no-guess-input-enc -halt-on-error -interaction=nonstopmode -file-line-error --shell-escape';
-% $latex_silent     = 'uplatex -kanji=utf8 -no-guess-input-enc -halt-on-error -interaction=batchmode --shell-escape';
-% $bibtex           = 'upbibtex';
-% $dvipdf           = 'dvipdfmx %O -o %D %S';
-% $makeindex        = 'mendex %O -o %D %S';
-% 		\end{minted}
+		\begin{mdframed}
+			\begin{minted}[fontsize=\small,breaklines]{perl}
+#!/usr/bin/env perl
+$pdf_mode   = 3;
+$latex      = 'uplatex -kanji=utf8';
+$bibtex     = 'upbibtex';
+$dvipdf     = 'dvipdfmx %O -o %D %S';
+$makeindex  = 'mendex %O -o %D %S';
+			\end{minted}
+		\end{mdframed}
+
+		\noindent
+		\begin{minipage}{0.4\hsize}\parindent=1zw
+			入力すると、右図のような状態になります。
+
+			次に、左のファイル欄の\url{main.tex}を選択します。
+			ファイルの中に何か記述されていますが、これを一度すべて削除し、空白の状態にします。
+			空白になったファイルの中に、以下に示すコードを入力してください。
+		\end{minipage}\hfill
+		\begin{minipage}{0.6\hsize}
+			\begin{flushright}
+				\includegraphics[width=0.95\textwidth]{overleaf-text-latexmkrc.png}
+			\end{flushright}
+		\end{minipage}
+		
+		\begin{mdframed}
+			\begin{minted}[fontsize=\small,breaklines]{tex}
+\documentclass[uplatex,dvipdfmx]{jsarticle}
+\usepackage{graphicx}
+
+\usepackage{tikz}
+\usepackage[RPvoltages]{circuitikz}
+\usepackage{here}
+
+\author{ななしたろう}
+\title{CircuiTikZテンプレート}
+
+\begin{document}
+\maketitle
+
+\section{はじめに}
+    この文書はテンプレート用です。
+    コピーの上ご使用ください。
+
+\section{回路図のテスト}
+    \begin{figure}[H]
+        \centering
+        \begin{circuitikz}[scale=1.5]
+            \draw (0,0)
+            to[sV,l=$FG$] (0,2);
+            \draw (0,2)
+            to[short] (2,2);
+            \draw (2,2)
+            to[R,l_=$R$] (2,1);
+            \draw (2,1)
+            to[L,l_=$L$] (2,0);
+            \draw (2,0)
+            to[short] (0,0);
+        \end{circuitikz}
+    \end{figure}
+
+\end{document}
+			\end{minted}
+		\end{mdframed}
+
+		\noindent
+		\begin{minipage}{0.65\hsize}\parindent=1zw
+			コードを入力したら、Overleafの左上にあるMenuボタンをクリックします。
+			Menuボタンをクリックすると、右図のような画面が表示されます。
+			"Compiler"のタブをクリックし"LaTeX"を選択し、元の編集画面をクリックしてもどります。
+			左側のRecompileと書かれたボタンをクリックすると、コンパイルがはじまります。
+			\includegraphics[width=\textwidth]{overleaf-example-pdf.png}
+			しばらくすると、コンパイルが終了して下の画像のようなPDFが出力されていたら完了となります。
+		\end{minipage}\hfill
+		\begin{minipage}{0.35\hsize}
+			\begin{flushright}
+				\includegraphics[width=0.95\textwidth]{overleaf-compiler-setting.png}
+			\end{flushright}
+		\end{minipage}
+
+		\begin{column}{もしもうまくいかなかったら}
+			環境構築の手順について解説しましたが、うまくいかない場合もあると思います。
+			その場合はまず、\url{.latexmkrc}や\url{main.tex}を
+			正しく入力できているか確認してみてください。
+			PDFからコピーアンドペーストすると正しく改行などがなされず、
+			エラーの原因となっている可能性があります。
+			また\url{https://3rdJCG.dev}からこれらのファイルの内容を
+			そのままコピーできるのでそちらを利用すると確実です。
+		\end{column}
 
 \expandafter\ifx\csname ifdraft\endcsname\relax
 	\end{document}
