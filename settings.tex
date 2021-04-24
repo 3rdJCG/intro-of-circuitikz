@@ -6,6 +6,7 @@
 \usepackage{graphicx}
 
 \usepackage{siunitx}		%for use si unit
+\usepackage{url}			%for display URL
 \usepackage{here}			%for use figure here
 \usepackage{tikz}			%for use TikZ package
 \usepackage{pgfplots}		%for use PGFplots
@@ -14,14 +15,15 @@
 \usepackage[RPvoltages,americanresistors,americaninductors,europeanvoltage,americancurrents]{circuitikz}
 \usepackage[noto]{pxchfon}	%for use Noto fonts
 
-% To out put TikZ logo
+% To display TikZ logo
 \usepackage{bxtexlogo}
 \bxtexlogoimport{TikZ}
 
 \usepackage{wrapfig}
 \usepackage[top=1.5cm, bottom=1.5cm, left=2.5cm, right=2cm]{geometry}
 
-% mdframed settings
+% minted & mdframed settings
+\usepackage[cache=false]{minted}
 \usepackage[xcolor,framemethod=tikz,usetwoside=false]{mdframed}
 \usetikzlibrary{shadows}
 % \mdfsetup{frametitlealignment=\center}
@@ -41,14 +43,6 @@
   \begin{mdframed}%
   }
   {\end{mdframed}}
-
-\usepackage[customcolors]{hf-tikz}
-\hfsetfillcolor{black!5}
-\hfsetbordercolor{black!50}
-
-\usepackage[cache=false]{minted}
-
-\usepackage{uri}
 
 \tikzset{% tikz style set
   	pointtype triangle/.style={mark=triangle*,mark size=4pt},
