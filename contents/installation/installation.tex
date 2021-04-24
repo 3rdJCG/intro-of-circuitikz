@@ -1,85 +1,86 @@
 \expandafter\ifx\csname ifdraft\endcsname\relax
     \input{../../settings.tex}
 	\graphicspath{{./figure/}}
-	\begin{document}
+\begin{document}
 \fi
 
 \chapter{\logoLaTeX 使用環境の構築}
 	\logoCiTikZ は\LaTeX の拡張機能ですので、\LaTeX の使用環境を整える必要があります。
 	本書の目的は\logoCiTikZ を使用することでありますので、
 	本格的な環境構築は行わず、OverleafというWeb上で\LaTeX を使用することができるサービスを使用します。
-
-	\section{Overleafの設定}
-		\subsection{Overleafへのログイン}
-			まず、Overleafをブラウザで開きます。URLは以下の通りです。
-			\begin{mdframed}[style=shadow]
-				\url{https://www.overleaf.com}
-			\end{mdframed}\vspace{-3mm}
-			すると以下のようなページが開きます。
-			\begin{figure}[H]
-				\centering
-				\includegraphics[width=\textwidth]{overleaf-page-top.png}
-			\end{figure}
-			右上のRegisterをクリックし、会員登録を行います。
-
+	
+	
+	\section{Overleafへのログイン}
+		まず、Overleafをブラウザで開きます。URLは以下の通りです。
+		\begin{mdframed}[style=shadow]
+			\url{https://www.overleaf.com}
+		\end{mdframed}\vspace{-3mm}
+		すると以下のようなページが開きます。
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=\textwidth]{overleaf-page-top.png}
+		\end{figure}
+		右上のRegisterをクリックし、会員登録を行います。
+		
 		\newpage
-		\subsection{テンプレートの作成}
-			\noindent
-			\begin{minipage}{0.4\hsize}%\parindent=1zw
-				会員登録が完了すると右のようなページが開くので、
-				"Cleate First Project"をクリックし、"Blank Project"を選択します。
-				右の図のようなポップアップが出てくるので、ここにProject名を入力します。
-				どんな名前でも動作しますが、今回は解説のために
-				\begin{mdframed}[style=shadow]
-					\url{circuitikz-template}
-				\end{mdframed}\vspace{-3mm}
-				と入力して、Createをクリックしてください。
-			\end{minipage}\hfill
-			\begin{minipage}{0.6\hsize}
-				\begin{flushright}
-					\includegraphics[width=0.95\textwidth]{overleaf-page-createproject.png}\\
-					\vspace{3mm}
-					\includegraphics[width=0.95\textwidth]{overleaf-page-projectname.png}
-				\end{flushright}
-			\end{minipage}
-
-			\begin{figure}[H]
-				\centering
-				\includegraphics[width=\textwidth]{overleaf-editer-initial.png}
-			\end{figure}
-
-			\noindent
-			\begin{minipage}{0.4\hsize}%\parindent=1zw
-				すると上のような画面に遷移しますので、
-				赤矢印が示すボタン"New File"をクリックしてください。
-				すると右図のような画面が開くので、
-				New Fileが選択されていることを確認したうえで
-				\begin{mdframed}[style=shadow]
-					\url{.latexmkrc}
-				\end{mdframed}\vspace{-3mm}
-				と入力して、Createをクリックしてください。
-			\end{minipage}\hfill
-			\begin{minipage}{0.6\hsize}
-				\begin{flushright}
-					\includegraphics[width=0.95\textwidth]{overleaf-editer-newfile.png}		
-				\end{flushright}
-			\end{minipage}
-
-			\noindent
-			\begin{minipage}{0.4\hsize}
-				すると左のファイル欄に\url{.latexmkrc}が追加されています。
-				このファイルをクリックし、編集画面を開きます。
-				編集画面を開くと、右図のように真っ白なファイルが表示されます。
-				このファイルに、以下に示す設定コードを入力してください。
-			\end{minipage}\hfill
-			\begin{minipage}{0.6\hsize}
-				\begin{flushright}
-					\includegraphics[width=0.95\textwidth]{overleaf-editer-latexmkrc.png}
-				\end{flushright}
-			\end{minipage}
-
-			\begin{mdframed}
-				\begin{minted}[fontsize=\small,breaklines]{perl}
+	
+	\section{テンプレートの作成}
+		\noindent
+		\begin{minipage}{0.4\hsize}%\parindent=1zw
+			会員登録が完了すると右のようなページが開くので、
+			"Cleate First Project"をクリックし、"Blank Project"を選択します。
+			右の図のようなポップアップが出てくるので、ここにProject名を入力します。
+			どんな名前でも動作しますが、今回は解説のために
+			\begin{mdframed}[style=shadow]
+				\url{circuitikz-template}
+			\end{mdframed}\vspace{-3mm}
+			と入力して、Createをクリックしてください。
+		\end{minipage}\hfill
+		\begin{minipage}{0.6\hsize}
+			\begin{flushright}
+				\includegraphics[width=0.95\textwidth]{overleaf-page-createproject.png}\\
+				\vspace{3mm}
+				\includegraphics[width=0.95\textwidth]{overleaf-page-projectname.png}
+			\end{flushright}
+		\end{minipage}
+		
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=\textwidth]{overleaf-editer-initial.png}
+		\end{figure}
+		
+		\noindent
+		\begin{minipage}{0.4\hsize}%\parindent=1zw
+			すると上のような画面に遷移しますので、
+			赤矢印が示すボタン"New File"をクリックしてください。
+			すると右図のような画面が開くので、
+			New Fileが選択されていることを確認したうえで
+			\begin{mdframed}[style=shadow]
+				\url{.latexmkrc}
+			\end{mdframed}\vspace{-3mm}
+			と入力して、Createをクリックしてください。
+		\end{minipage}\hfill
+		\begin{minipage}{0.6\hsize}
+			\begin{flushright}
+				\includegraphics[width=0.95\textwidth]{overleaf-editer-newfile.png}
+			\end{flushright}
+		\end{minipage}
+		
+		\noindent
+		\begin{minipage}{0.4\hsize}
+			すると左のファイル欄に\url{.latexmkrc}が追加されています。
+			このファイルをクリックし、編集画面を開きます。
+			編集画面を開くと、右図のように真っ白なファイルが表示されます。
+			このファイルに、以下に示す設定コードを入力してください。
+		\end{minipage}\hfill
+		\begin{minipage}{0.6\hsize}
+			\begin{flushright}
+				\includegraphics[width=0.95\textwidth]{overleaf-editer-latexmkrc.png}
+			\end{flushright}
+		\end{minipage}
+		
+		\begin{mdframed}
+			\begin{minted}[fontsize=\small,breaklines]{perl}
 #!/usr/bin/env perl
 $pdf_mode   = 3;
 $latex      = 'uplatex -kanji=utf8';
@@ -87,24 +88,24 @@ $bibtex     = 'upbibtex';
 $dvipdf     = 'dvipdfmx %O -o %D %S';
 $makeindex  = 'mendex %O -o %D %S';
 				\end{minted}
-			\end{mdframed}
-
-			\noindent
-			\begin{minipage}{0.4\hsize}\parindent=1zw
-				入力すると、右図のような状態になります。
-
-				次に、左のファイル欄の\url{main.tex}を選択します。
-				ファイルの中に何か記述されていますが、これを一度すべて削除し、空白の状態にします。
-				空白になったファイルの中に、以下に示すコードを入力してください。
-			\end{minipage}\hfill
-			\begin{minipage}{0.6\hsize}
-				\begin{flushright}
-					\includegraphics[width=0.95\textwidth]{overleaf-text-latexmkrc.png}
-				\end{flushright}
-			\end{minipage}
-
-			\begin{mdframed}
-				\begin{minted}[fontsize=\small,breaklines]{tex}
+		\end{mdframed}
+		
+		\noindent
+		\begin{minipage}{0.4\hsize}\parindent=1zw
+			入力すると、右図のような状態になります。
+			
+			次に、左のファイル欄の\url{main.tex}を選択します。
+			ファイルの中に何か記述されていますが、これを一度すべて削除し、空白の状態にします。
+			空白になったファイルの中に、以下に示すコードを入力してください。
+		\end{minipage}\hfill
+		\begin{minipage}{0.6\hsize}
+			\begin{flushright}
+				\includegraphics[width=0.95\textwidth]{overleaf-text-latexmkrc.png}
+			\end{flushright}
+		\end{minipage}
+		
+		\begin{mdframed}
+			\begin{minted}[fontsize=\small,breaklines]{tex}
 \documentclass[uplatex,dvipdfmx]{jsarticle}
 \usepackage{graphicx}
 
@@ -141,33 +142,33 @@ $makeindex  = 'mendex %O -o %D %S';
 
 \end{document}
 				\end{minted}
-			\end{mdframed}
-
-			\noindent
-			\begin{minipage}{0.65\hsize}\parindent=1zw
-				コードを入力したら、Overleafの左上にあるMenuボタンをクリックします。
-				Menuボタンをクリックすると、右図のような画面が表示されます。
-				"Compiler"のタブをクリックし"LaTeX"を選択し、元の編集画面をクリックしてもどります。
-				左側のRecompileと書かれたボタンをクリックすると、コンパイルがはじまります。
-				\includegraphics[width=\textwidth]{overleaf-example-pdf.png}
-				しばらくすると、コンパイルが終了して下の画像のようなPDFが出力されていたら完了となります。
-			\end{minipage}\hfill
-			\begin{minipage}{0.35\hsize}
-				\begin{flushright}
-					\includegraphics[width=0.95\textwidth]{overleaf-compiler-setting.png}
-				\end{flushright}
-			\end{minipage}
-
-			\begin{column}{もしもうまくいかなかったら}
-				環境構築の手順について解説しましたが、うまくいかない場合もあると思います。
-				その場合はまず、\url{.latexmkrc}や\url{main.tex}を
-				正しく入力できているか確認してみてください。
-				PDFからコピーアンドペーストすると正しく改行などがなされず、
-				エラーの原因となっている可能性があります。
-				また\url{https://3rdJCG.dev}からこれらのファイルの内容を
-				そのままコピーできるのでそちらを利用すると確実です。
-			\end{column}
-
-\expandafter\ifx\csname ifdraft\endcsname\relax
-	\end{document}
+		\end{mdframed}
+		
+		\noindent
+		\begin{minipage}{0.65\hsize}\parindent=1zw
+			コードを入力したら、Overleafの左上にあるMenuボタンをクリックします。
+			Menuボタンをクリックすると、右図のような画面が表示されます。
+			"Compiler"のタブをクリックし"LaTeX"を選択し、元の編集画面をクリックしてもどります。
+			左側のRecompileと書かれたボタンをクリックすると、コンパイルがはじまります。
+			\includegraphics[width=\textwidth]{overleaf-example-pdf.png}
+			しばらくすると、コンパイルが終了して下の画像のようなPDFが出力されていたら完了となります。
+		\end{minipage}\hfill
+		\begin{minipage}{0.35\hsize}
+			\begin{flushright}
+				\includegraphics[width=0.95\textwidth]{overleaf-compiler-setting.png}
+			\end{flushright}
+		\end{minipage}
+		
+		\begin{column}{もしもうまくいかなかったら}
+			環境構築の手順について解説しましたが、うまくいかない場合もあると思います。
+			その場合はまず、\url{.latexmkrc}や\url{main.tex}を
+			正しく入力できているか確認してみてください。
+			PDFからコピーアンドペーストすると正しく改行などがなされず、
+			エラーの原因となっている可能性があります。
+			また\url{https://3rdJCG.dev}からこれらのファイルの内容を
+			そのままコピーできるのでそちらを利用すると確実です。
+		\end{column}
+		
+		\expandafter\ifx\csname ifdraft\endcsname\relax
+\end{document}
 \fi
