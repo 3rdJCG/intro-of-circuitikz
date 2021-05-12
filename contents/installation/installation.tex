@@ -177,16 +177,20 @@ $makeindex  = 'mendex %O -o %D %S';
 		まず、さきほどのOverleafの画面の左上にある↑をクリックしてメニュー画面に戻ります。
 		\footnote{うまく開けない場合は以下のURLから\url{https://www.overleaf.com/project}}
 		すると以下のような画面が表示されるので、赤丸で示した"copy"ボタンを押下します。
-		
-		\includegraphics[width=0.95\textwidth]{overleaf-menu.png}
-		
+		\begin{figure}
+			\includegraphics[width=0.95\textwidth]{overleaf-menu.png}
+		\end{figure}
 		すると以下のような画面に遷移するので、好きな名前を入力して"copy"をクリックします。
-
-		\includegraphics[width=0.95\textwidth]{overleaf-menu-copy.png}
-
+		\begin{figure}
+			\includegraphics[width=0.95\textwidth]{overleaf-menu-copy.png}
+		\end{figure}
 		コピーが完了すると、以下のようにコピーされたプロジェクトが表示されています。
-
-		\includegraphics[width=0.95\textwidth]{overleaf-menu-copied.png}
+		\begin{figure}
+			\includegraphics[width=0.95\textwidth]{overleaf-menu-copied.png}	
+		\end{figure}
+		コピーしたプロジェクト(ここでは"circuitikz-test1")をクリックしてひらくと、
+		テンプレートと同じ内容のファイルが開かれます。
+		以上で完了です。
 		
 		\expandafter\ifx\csname ifdraft\endcsname\relax
 \end{document}
