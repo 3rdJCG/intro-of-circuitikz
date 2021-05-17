@@ -5,20 +5,32 @@
 \fi
 
 \chapter{\logoLaTeX の基本}
-    前章では、\LaTeX の使用環境の構築方法について解説しました。
-    この章では\LaTeX の基本的な使用方法について解説していきます。
+	前章では、\LaTeX の使用環境の構築方法について解説しました。
+	この章では\LaTeX の基本的な使用方法について解説していきます。
 
-    \section{\logoLaTeX 文書の基本構成}
-        \LaTeX 文書は2つの部分で構成されます。
-        1つ目がプリアンブルと呼ばれる部分で、その文書の設定などを行います。
-        2つ目が本文と呼ばれる部分で、文書の本文や文書の描画命令そのものを記述します。
+	\section{\logoLaTeX 文書の基本構成}
+		\LaTeX 文書は、\url{\}からはじまる単語は命令とよばれ、特別な指示をコンパイラに与えます。
+		命令には2つの形式があり、
+		\url{\hogehoge}のように1つの単語で完結する命令と、
+		\url{\begin{hoge}}ではじまり\url{\end{hoge}}で終わる命令があります。
+		とくに\url{\begin{hoge}}と\url{\end{hoge}}の間を"hoge環境"のように呼称します。
 
-        前章でコピーしたテンプレートを開きます。
+		また、\LaTeX 文書は2つの部分で構成されます。
+		1つ目がプリアンブルと呼ばれる部分で、その文書の設定などを行います。
+		2つ目が本文と呼ばれる部分で、文書の本文や文書の描画命令そのものを記述します。
 
-        この文書では、\url{\begin{document}}より上の部分の1から10行目の間がプリアンブルで、
-        \url{\begin{document}}から\url{\end{document}}の11行目から35行目の間が本文です。
+		前章でコピーしたテンプレートを開いて、実際の\LaTeX 文書を見てみましょう。
+		この文書では、\url{\begin{document}}より上の部分の1から10行目の間がプリアンブルで、
+		\url{\begin{document}}から\url{\end{document}}の11行目から35行目の間が本文です。
         
-		
+        次に、それぞれの命令について見てみましょう。
+        例えば、\url{\maketitle}という命令は本文の前にタイトルを出力する命令です。
+        また\url{\begin{figure}}と\url{\end{figure}}の間はfigure環境と呼ばれ、
+        この環境内の記述内容は図と認識されます。
+        またfigure環境内に\url{\begin{circuitikz}}と\url{\end{circuitikz}}があるように、
+        環境はいわゆる"入れ子構造"にすることができます。
+
+
 		\expandafter\ifx\csname ifdraft\endcsname\relax
-\end{document}
-\fi
+		\end{document}
+		\fi
