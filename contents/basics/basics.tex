@@ -1,0 +1,24 @@
+\expandafter\ifx\csname ifdraft\endcsname\relax
+    \input{../../settings.tex}
+	\graphicspath{{./figure/}}
+\begin{document}
+\fi
+
+\chapter{\logoLaTeX の基本}
+    前章では、\LaTeX の使用環境の構築方法について解説しました。
+    この章では\LaTeX の基本的な使用方法について解説していきます。
+
+    \section{\logoLaTeX 文書の基本構成}
+        \LaTeX 文書は2つの部分で構成されます。
+        1つ目がプリアンブルと呼ばれる部分で、その文書の設定などを行います。
+        2つ目が本文と呼ばれる部分で、文書の本文や文書の描画命令そのものを記述します。
+
+        前章でコピーしたテンプレートを開きます。
+
+        この文書では、\url{\begin{document}}より上の部分の1から10行目の間がプリアンブルで、
+        \url{\begin{document}}から\url{\end{document}}の11行目から35行目の間が本文です。
+        
+		
+		\expandafter\ifx\csname ifdraft\endcsname\relax
+\end{document}
+\fi
