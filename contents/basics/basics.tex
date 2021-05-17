@@ -14,10 +14,36 @@
 		\url{\hogehoge}のように1つの単語で完結する命令と、
 		\url{\begin{hoge}}ではじまり\url{\end{hoge}}で終わる命令があります。
 		とくに\url{\begin{hoge}}と\url{\end{hoge}}の間を"hoge環境"のように呼称します。
+        また他に特別な記号として\url{%}があり、\url{%}以降の記述は改行されるまで一切の内容を無視します。
+        この機能をコメントアウトと呼称します。
+        この機能を使うと、メモ書きなどをしておくことができます。
+        \begin{mdframed}
+			\begin{minted}[fontsize=\small,breaklines]{tex}
+\hogehoge % このようにコメントを書くことができます
 
+\begin{hoge} % これはhoge環境のはじまり
+    あいうえお
+\end{hoge} % これはhoge環境のおわり
+			\end{minted}
+		\end{mdframed}
+        
 		また、\LaTeX 文書は2つの部分で構成されます。
 		1つ目がプリアンブルと呼ばれる部分で、その文書の設定などを行います。
 		2つ目が本文と呼ばれる部分で、文書の本文や文書の描画命令そのものを記述します。
+        \begin{mdframed}
+			\begin{minted}[fontsize=\small,breaklines]{tex}
+\documentclass[uplatex,dvipdfmx]{jsarticle}
+\usepackage{graphicx}
+︙
+︙ % ここがプリアンブル
+︙
+\begin{document}
+    ︙
+    ︙ % ここが本文
+    ︙
+\end{document}
+			\end{minted}
+		\end{mdframed}
 
 		前章でコピーしたテンプレートを開いて、実際の\LaTeX 文書を見てみましょう。
 		この文書では、\url{\begin{document}}より上の部分の1から10行目の間がプリアンブルで、
