@@ -55,6 +55,21 @@
         この環境内の記述内容は図と認識されます。
         またfigure環境内に\url{\begin{circuitikz}}と\url{\end{circuitikz}}があるように、
         環境はいわゆる"入れ子構造"にすることができます。
+        \begin{mdframed}
+			\begin{minted}[fontsize=\small,breaklines]{tex}
+︙
+\maketitle
+︙
+\begin{figure}[H]
+    \centering
+    \begin{circuitikz}[scale=1.5]
+        ︙
+        ︙
+    \end{circuitikz}
+\end{figure}
+︙
+			\end{minted}
+		\end{mdframed}
 
 
 		\expandafter\ifx\csname ifdraft\endcsname\relax
